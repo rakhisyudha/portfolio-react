@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const About = () => {
   return (
     <div name='about' className='w-full h-screen bg-[#1b1b27] text-gray-300'>

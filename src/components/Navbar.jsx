@@ -3,6 +3,7 @@ import {FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook} from "react-icons/fa"
 import { HiOutlineMail } from "react-icons/hi";
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 import Logo from "../assets/logo1-removebg-preview.png";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
@@ -11,15 +12,25 @@ const Navbar = () => {
     return (
       <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#1b1b27] text-gray-300">
         <div>
-        <img src={Logo} alt="Logo Image" style={{width: '100px' }} />
+        <img src={Logo} alt="Logo Image" style={{width: '120px' }} />
         </div>
         {/* Menu */}
             <ul className="hidden md:flex">
-                <li className="mx-4">Home</li>
-                <li className="mx-4">About</li>
-                <li className="mx-4">Skills</li>
-                <li className="mx-4">Work</li>
-                <li className="mx-4">Contact</li>
+                <li className="mx-4">
+                <Link to="home" smooth={true} duration={500}>Home</Link>
+                </li>
+                <li className="mx-4">
+                <Link to="about" smooth={true} duration={500}>About</Link>
+                </li>
+                <li className="mx-4">
+                <Link to="skills" smooth={true} duration={500}>Skills</Link>
+                </li>
+                <li className="mx-4">
+                <Link to="projects" smooth={true} duration={500}>Projects</Link>
+                </li>
+                <li className="mx-4">
+                <Link to="contact" smooth={true} duration={500}>Contact</Link>
+                </li>
             </ul>
 
         {/* Hamburger */}
@@ -29,11 +40,11 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#1b1b27] flex flex-col justify-center items-center'}>
-            <li className="my-6 text-4xl">Home</li>
-            <li className="my-6 text-4xl">About</li>
-            <li className="my-6 text-4xl">Skills</li>
-            <li className="my-6 text-4xl">Work</li>
-            <li className="my-6 text-4xl">Contact</li>
+            <li className="my-6 text-4xl"><Link onClick={handleClick} to="home" smooth={true} duration={500}>Home</Link></li>
+            <li className="my-6 text-4xl"><Link onClick={handleClick} to="about" smooth={true} duration={500}>About</Link></li>
+            <li className="my-6 text-4xl"><Link onClick={handleClick} to="skills" smooth={true} duration={500}>Skills</Link></li>
+            <li className="my-6 text-4xl"><Link onClick={handleClick} to="projects" smooth={true} duration={500}>Projects</Link></li>
+            <li className="my-6 text-4xl"><Link onClick={handleClick} to="contact" smooth={true} duration={500}>Contact</Link></li>
         </ul>
 
         {/* Social Icons */}
